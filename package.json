@@ -1,0 +1,26 @@
+{
+  "name": "game",
+  "version": "1.0.0",
+  "description": "Vanhackathon Challange",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "webpack-dev-server -d --inline --hot --progress --no-info --port 9000",
+    "build": "rimraf ./dist && webpack -p"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "copy-webpack-plugin": "^3.0.1",
+    "html-webpack-plugin": "^2.24.0",
+    "rimraf": "^2.5.4",
+    "ts-loader": "^0.9.5",
+    "typescript": "^2.0.3",
+    "typings": "^1.4.0",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.2"
+  },
+  "engines": {
+    "node": ">= 4.4.4",
+    "npm": ">= 3"
+  }
+}
