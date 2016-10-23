@@ -35,8 +35,9 @@ export class Enemy extends Sprite {
   private configure(){
     this.anchor.setTo(0.05,0.95);    
     this.game.time.events.loop(100/this.speed, this.updateTexture, this);
-    this.game.physics.enable( [ this ], Phaser.Physics.ARCADE);
+    this.game.physics.enable([this], Phaser.Physics.ARCADE);
     this.checkWorldBounds = true;
+    this.body.allowGravity = false;
     // this.body.checkCollision = true;
   }
 

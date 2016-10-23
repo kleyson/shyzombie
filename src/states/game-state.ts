@@ -9,19 +9,19 @@ export class GameState extends State {
   
   stage: Stage;
   background: Background;
-  scoreBanner: Text;
+  lifeBanner: Text;
   zombie: Zombie;
   enemies: Group;
 
   enemies_on_screen: number;
-  score:number;
+  life:number;
   count_enemies: number;
 
   create () {
     this.windowScale = +localStorage.getItem('windowsScale');
     this.stage.backgroundColor = '#FFF333'
     this.count_enemies = 0;
-    this.score = 0;
+    this.life = 100;
     this.enemies_on_screen = 0;
 
     this.addBackground();
@@ -30,6 +30,7 @@ export class GameState extends State {
     this.addCounter();
 
     this.enemies = this.game.add.group();
+    this.enemies.enableBody=true;
 
     this.game.physics.startSystem(Phaser.Physics.ARCADE);
     this.game.physics.arcade.gravity.y = 0;
@@ -42,14 +43,17 @@ export class GameState extends State {
   }
 
   render(){
-    this.scoreBanner.text = `Score: ${this.score}`
+    this.lifeBanner.text = `Life: ${this.life} % \nEnemies: ${this.count_enemies}\nNow: ${this.enemies_on_screen}`
+    if ( this.life <= 0){
+      this.game.state.start('GameOver');
+    }
   }
 
   private addCounter(){
-     this.scoreBanner = this.add.text(10 ,10, `Score: `, {});
-     this.scoreBanner.fontSize = 20;
-     this.scoreBanner.fill = '#FFFFFF';
-     this.scoreBanner.anchor.setTo(0);
+     this.lifeBanner = this.add.text(10 ,10, `Life: `, {});
+     this.lifeBanner.fontSize = 20;
+     this.lifeBanner.fill = '#FFFFFF';
+     this.lifeBanner.anchor.setTo(0);
   }
 
 
@@ -72,31 +76,30 @@ export class GameState extends State {
     this.zombie = new Zombie({ game: this.game, x: 100, y: this.game.world.bottom - (this.TILES_SIZE * this.windowScale)*2, scale: this.windowScale});
     this.game.add.existing(this.zombie);
     this.zombie.body.onCollide = new Phaser.Signal();
-    this.zombie.body.onCollide.add(this.incrementScore, this);
+    this.zombie.body.onCollide.add(this.loseLife, this);
   }
 
   private addEnemy(){
-    if (this.count_enemies <= this.MAX_ENEMIES){
+    if (this.enemies_on_screen <= this.MAX_ENEMIES){
       this.incraseEnemy();
       let enemy = new Enemy({ game: this.game, x: this.game.width-5, y: this.game.world.bottom - (this.TILES_SIZE * this.windowScale)*2, scale: this.windowScale});
       enemy.events.onOutOfBounds.add(this.decraseEnemy, this);
       this.enemies.add(enemy);
+      console.log('new enemy', enemy.x);
     }
   }
 
   private decraseEnemy(){
-    this.count_enemies-=1;
-    if (this.count_enemies == 0){
-      this.enemies.removeAll();
-    }  
+    this.enemies_on_screen-=1;
   }
 
   private incraseEnemy(){
+    this.enemies_on_screen+=1;
     this.count_enemies+=1;
   }
 
-  private incrementScore(){
-    this.score+=100;
+  private loseLife(){
+    this.life-=1;
   }
 
 

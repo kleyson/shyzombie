@@ -1,13 +1,11 @@
-import { State, Button, Text, SoundManager, Sound } from 'phaser'
-import { Zombie, Background } from '../sprites'
+import { State, Button, Text } from 'phaser'
+import { Zombie, Background} from '../sprites'
 
-export class SplashState extends State {
+export class GameOverState extends State {
 
 	startButton: Button;
 	title: Text;
 	background: Background;
-	soundManager: SoundManager;
-	loop: Sound;
 	windowScale: number;
 
  	preload() {
@@ -20,17 +18,10 @@ export class SplashState extends State {
     create() {
 		this.startButton = this.game.add.button(this.game.world.centerX + (200 *this.windowScale), 1300*this.windowScale, 'start_button', this.actionOnClick, this, 2, 1, 0);
 		this.startButton.scale.setTo(this.windowScale*3);
-		this.loop = this.game.add.audio('loop');
-		this.soundManager = this.game.sound;
-		this.soundManager.setDecodedCallback([this.loop], this.playSound, this)
 	}
 
 	actionOnClick () {
 		this.game.state.start('Game')
-	}
-
-	private playSound() {
-		this.loop.loopFull(1);
 	}
 
 	private addBackground(){
@@ -39,13 +30,14 @@ export class SplashState extends State {
   	}
 
 	private addZombie(){
-		let zombie = new Zombie({ game: this.game, x: 100, y: this.game.world.bottom, scale: this.windowScale*3});
+		let zombie = new Zombie({ game: this.game, x: 100, y: this.game.world.bottom, asset: 'dead_1', scale: this.windowScale*3});
+		zombie.status ='dead';
 		this.game.add.existing(zombie);
 		zombie.anchor.set(0.5);
   }
 
   private addBanner(){
-     this.title = this.add.text(this.game.world.centerX, 60, `Shy Zombie`, {});
+     this.title = this.add.text(this.game.world.centerX, 60, `Game Over`, {});
      this.title.fontSize = 100;
      this.title.fill = '#7fbb00';
      this.title.anchor.setTo(0.5);
