@@ -30,9 +30,9 @@ export class GameState extends State {
     this.addCounter();
 
     this.enemies = this.game.add.group();
-    this.enemies.enableBody=true;
 
     this.game.physics.startSystem(Phaser.Physics.ARCADE);
+    this.game.physics.arcade.gravity.x = 0;
     this.game.physics.arcade.gravity.y = 0;
     this.game.world.setBounds(0, 0, this.game.width , this.game.height - (this.TILES_SIZE * this.windowScale)*2+10);
     this.game.time.events.loop(5000, this.addEnemy, this);
@@ -85,7 +85,6 @@ export class GameState extends State {
       let enemy = new Enemy({ game: this.game, x: this.game.width-5, y: this.game.world.bottom - (this.TILES_SIZE * this.windowScale)*2, scale: this.windowScale});
       enemy.events.onOutOfBounds.add(this.decraseEnemy, this);
       this.enemies.add(enemy);
-      console.log('new enemy', enemy.x);
     }
   }
 
