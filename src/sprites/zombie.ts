@@ -32,7 +32,9 @@ update(){
     } else if (this.game.input.keyboard.isDown(Phaser.Keyboard.LEFT)){
         this.status = 'walk_back';
         this.x-=1;
-    } else {
+    } else if (this.status === 'dead'){ 
+        this.status = 'dead';
+    }else {
         this.status = 'idle';
     }
   }
@@ -58,7 +60,7 @@ update(){
             texture = `walk_${this.iterator}`;
             break;
         case 'dead':
-            this.iterator = this.iterator > 11 ? 1 : ++this.iterator;
+            this.iterator = this.iterator > 11 ? 11 : ++this.iterator;
             texture = `dead_${this.iterator}`;
             break;
         case 'attack':
