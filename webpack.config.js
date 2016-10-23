@@ -21,6 +21,10 @@ module.exports = {
       {
         from: './src/assets',
         to:'./assets'
+      },
+      {
+        from: './lib',
+        to:'./lib'
       }
     ]),
     new HtmlWebpackPlugin({
