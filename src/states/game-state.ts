@@ -15,20 +15,20 @@ export class GameState extends State {
     this.game.physics.startSystem(Phaser.Physics.ARCADE);
     this.game.physics.arcade.gravity.y = 0;
     
-    this.addCounter();
     this.addBackground();
     this.addFloor();
     this.addZombie();
+    this.addCounter();
 
     this.game.world.setBounds(0, 0, this.game.width , this.game.height - (this.TILES_SIZE * this.windowScale)*2+10);
   }
 
 
   private addCounter(){
-     let banner = this.add.text(this.game.height -30, this.game.height - 30, 'Taca-le pau...', {});
-     banner.fontSize = 40;
-     banner.fill = '#77BFA3';
-     banner.anchor.setTo(0.5);
+     let banner = this.add.text(10 ,10, `Score: `, {});
+     banner.fontSize = 20;
+     banner.fill = '#FFFFFF';
+     banner.anchor.setTo(0);
   }
 
 

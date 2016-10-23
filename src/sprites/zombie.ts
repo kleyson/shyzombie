@@ -17,7 +17,6 @@ export class Zombie extends Sprite {
     this.iterator = 1;
     this.floor_point = y + 10;
     this.configure();
-    setInterval(()=> this.updateTexture(), 100);
   }
 
 update(){
@@ -43,13 +42,14 @@ update(){
     this.game.physics.enable( [ this ], Phaser.Physics.ARCADE)
     this.body.gravity.y = 200;
     this.body.collideWorldBounds = true;
+    this.game.time.events.loop(100, this.updateTexture, this);
   }
 
   private updateTexture(){
     let texture = '';
     switch(this.status) {
         case 'walk_back':
-            this.iterator = this.iterator == 1 ? 9 : --this.iterator;
+            this.iterator = this.iterator == 1 || this.iterator >9 ? 9 : --this.iterator;
             texture = `walk_${this.iterator}`;
             break;
         case 'walk':
