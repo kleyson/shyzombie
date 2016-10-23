@@ -97,5 +97,112 @@ export class SplashState extends State {
 		this.load.image("walk_9","./assets/chars/zombie/Walk9.png");
 		this.load.image("walk_10","./assets/chars/zombie/Walk10.png");
  
+
+		//Enemies
+		
+		//Adventurer
+		this.load.image("adventurer_walk_1","./assets/enemies/adventurer/Walk1.png");
+		this.load.image("adventurer_walk_2","./assets/enemies/adventurer/Walk2.png");
+		this.load.image("adventurer_walk_3","./assets/enemies/adventurer/Walk3.png");
+		this.load.image("adventurer_walk_4","./assets/enemies/adventurer/Walk4.png");
+		this.load.image("adventurer_walk_5","./assets/enemies/adventurer/Walk5.png");
+		this.load.image("adventurer_walk_6","./assets/enemies/adventurer/Walk6.png");
+		this.load.image("adventurer_walk_7","./assets/enemies/adventurer/Walk7.png");
+		this.load.image("adventurer_walk_8","./assets/enemies/adventurer/Walk8.png");
+		this.load.image("adventurer_walk_9","./assets/enemies/adventurer/Walk9.png");
+		this.load.image("adventurer_walk_10","./assets/enemies/adventurer/Walk10.png");
+
+		//Cat
+		this.load.image("cat_walk_1","./assets/enemies/cat/Walk1.png");
+		this.load.image("cat_walk_2","./assets/enemies/cat/Walk2.png");
+		this.load.image("cat_walk_3","./assets/enemies/cat/Walk3.png");
+		this.load.image("cat_walk_4","./assets/enemies/cat/Walk4.png");
+		this.load.image("cat_walk_5","./assets/enemies/cat/Walk5.png");
+		this.load.image("cat_walk_6","./assets/enemies/cat/Walk6.png");
+		this.load.image("cat_walk_7","./assets/enemies/cat/Walk7.png");
+		this.load.image("cat_walk_8","./assets/enemies/cat/Walk8.png");
+		this.load.image("cat_walk_9","./assets/enemies/cat/Walk9.png");
+		this.load.image("cat_walk_10","./assets/enemies/cat/Walk10.png");
+
+		//Dog
+		this.load.image("dog_walk_1","./assets/enemies/dog/Walk1.png");
+		this.load.image("dog_walk_2","./assets/enemies/dog/Walk2.png");
+		this.load.image("dog_walk_3","./assets/enemies/dog/Walk3.png");
+		this.load.image("dog_walk_4","./assets/enemies/dog/Walk4.png");
+		this.load.image("dog_walk_5","./assets/enemies/dog/Walk5.png");
+		this.load.image("dog_walk_6","./assets/enemies/dog/Walk6.png");
+		this.load.image("dog_walk_7","./assets/enemies/dog/Walk7.png");
+		this.load.image("dog_walk_8","./assets/enemies/dog/Walk8.png");
+		this.load.image("dog_walk_9","./assets/enemies/dog/Walk9.png");
+		this.load.image("dog_walk_10","./assets/enemies/dog/Walk10.png");
+
+		//Girl
+		this.load.image("girl_walk_1","./assets/enemies/girl/Walk1.png");
+		this.load.image("girl_walk_2","./assets/enemies/girl/Walk2.png");
+		this.load.image("girl_walk_3","./assets/enemies/girl/Walk3.png");
+		this.load.image("girl_walk_4","./assets/enemies/girl/Walk4.png");
+		this.load.image("girl_walk_5","./assets/enemies/girl/Walk5.png");
+		this.load.image("girl_walk_6","./assets/enemies/girl/Walk6.png");
+		this.load.image("girl_walk_7","./assets/enemies/girl/Walk7.png");
+		this.load.image("girl_walk_8","./assets/enemies/girl/Walk8.png");
+
+		//Jack
+		this.load.image("jack_walk_1","./assets/enemies/jack/Walk1.png");
+		this.load.image("jack_walk_2","./assets/enemies/jack/Walk2.png");
+		this.load.image("jack_walk_3","./assets/enemies/jack/Walk3.png");
+		this.load.image("jack_walk_4","./assets/enemies/jack/Walk4.png");
+		this.load.image("jack_walk_5","./assets/enemies/jack/Walk5.png");
+		this.load.image("jack_walk_6","./assets/enemies/jack/Walk6.png");
+		this.load.image("jack_walk_7","./assets/enemies/jack/Walk7.png");
+		this.load.image("jack_walk_8","./assets/enemies/jack/Walk8.png");
+		this.load.image("jack_walk_9","./assets/enemies/jack/Walk9.png");
+		this.load.image("jack_walk_10","./assets/enemies/jack/Walk10.png");
+
+		//Knight
+		this.load.image("knight_walk_1","./assets/enemies/knight/Walk1.png");
+		this.load.image("knight_walk_2","./assets/enemies/knight/Walk2.png");
+		this.load.image("knight_walk_3","./assets/enemies/knight/Walk3.png");
+		this.load.image("knight_walk_4","./assets/enemies/knight/Walk4.png");
+		this.load.image("knight_walk_5","./assets/enemies/knight/Walk5.png");
+		this.load.image("knight_walk_6","./assets/enemies/knight/Walk6.png");
+		this.load.image("knight_walk_7","./assets/enemies/knight/Walk7.png");
+		this.load.image("knight_walk_8","./assets/enemies/knight/Walk8.png");
+		this.load.image("knight_walk_9","./assets/enemies/knight/Walk9.png");
+		this.load.image("knight_walk_10","./assets/enemies/knight/Walk10.png");
+
+		//Ninja
+		this.load.image("ninja_walk_1","./assets/enemies/ninja/Walk1.png");
+		this.load.image("ninja_walk_2","./assets/enemies/ninja/Walk2.png");
+		this.load.image("ninja_walk_3","./assets/enemies/ninja/Walk3.png");
+		this.load.image("ninja_walk_4","./assets/enemies/ninja/Walk4.png");
+		this.load.image("ninja_walk_5","./assets/enemies/ninja/Walk5.png");
+		this.load.image("ninja_walk_6","./assets/enemies/ninja/Walk6.png");
+		this.load.image("ninja_walk_7","./assets/enemies/ninja/Walk7.png");
+		this.load.image("ninja_walk_8","./assets/enemies/ninja/Walk8.png");
+		this.load.image("ninja_walk_9","./assets/enemies/ninja/Walk9.png");
+		this.load.image("ninja_walk_10","./assets/enemies/ninja/Walk10.png");
+
+		//Ninja Girl
+		this.load.image("ninjagirl_walk_1","./assets/enemies/ninjagirl/Walk1.png");
+		this.load.image("ninjagirl_walk_2","./assets/enemies/ninjagirl/Walk2.png");
+		this.load.image("ninjagirl_walk_3","./assets/enemies/ninjagirl/Walk3.png");
+		this.load.image("ninjagirl_walk_4","./assets/enemies/ninjagirl/Walk4.png");
+		this.load.image("ninjagirl_walk_5","./assets/enemies/ninjagirl/Walk5.png");
+		this.load.image("ninjagirl_walk_6","./assets/enemies/ninjagirl/Walk6.png");
+		this.load.image("ninjagirl_walk_7","./assets/enemies/ninjagirl/Walk7.png");
+		this.load.image("ninjagirl_walk_8","./assets/enemies/ninjagirl/Walk8.png");
+		this.load.image("ninjagirl_walk_9","./assets/enemies/ninjagirl/Walk9.png");
+		this.load.image("ninjagirl_walk_10","./assets/enemies/ninjagirl/Walk10.png");
+
+		//Robot
+		this.load.image("robot_walk_1","./assets/enemies/robot/Walk1.png");
+		this.load.image("robot_walk_2","./assets/enemies/robot/Walk2.png");
+		this.load.image("robot_walk_3","./assets/enemies/robot/Walk3.png");
+		this.load.image("robot_walk_4","./assets/enemies/robot/Walk4.png");
+		this.load.image("robot_walk_5","./assets/enemies/robot/Walk5.png");
+		this.load.image("robot_walk_6","./assets/enemies/robot/Walk6.png");
+		this.load.image("robot_walk_7","./assets/enemies/robot/Walk7.png");
+		this.load.image("robot_walk_8","./assets/enemies/robot/Walk8.png");
+		this.load.image("robot_walk_9","./assets/enemies/robot/Walk9.png");
 	}
 }

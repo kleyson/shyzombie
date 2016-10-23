@@ -6,7 +6,7 @@ export class Zombie extends Sprite {
   status: string;
   iterator: number;
   floor_point: number;
-  JUMP_SIZE: number = 500;
+  JUMP_SIZE: number = 800;
 
   constructor({ game, x, y, asset = 'idle_1', scale }) {
     super(game, x, y, asset);
@@ -40,9 +40,10 @@ update(){
   private configure(){
     this.anchor.setTo(0.05,0.95);    
     this.game.physics.enable( [ this ], Phaser.Physics.ARCADE)
-    this.body.gravity.y = 200;
+    this.body.gravity.y = 100;
     this.body.collideWorldBounds = true;
     this.game.time.events.loop(100, this.updateTexture, this);
+    this.body.checkCollision = true;
   }
 
   private updateTexture(){
