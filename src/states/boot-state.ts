@@ -9,7 +9,7 @@ export class BootState extends State {
   }
 
   preload () {
-    let text = this.add.text(this.world.centerX, this.world.centerY, 'Loading', { font: '40px Arial', fill: '#000000', align: 'center' });
+    let text = this.add.text(this.world.centerX, this.world.centerY, 'Wait please!\nDownloading assets.', { font: '40px Arial', fill: '#000000', align: 'center' });
     text.anchor.setTo(0.5, 0.5);
 
     //Music
